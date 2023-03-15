@@ -10,6 +10,8 @@ CREATE TABLE customers (
     last_name VARCHAR(50),
     email VARCHAR(50)
 );
+
+DESC customers;
  
 CREATE TABLE orders (
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -18,6 +20,8 @@ CREATE TABLE orders (
     customer_id INT,
     FOREIGN KEY (customer_id) REFERENCES customers(id)
 );
+
+DESC orders;
  
 INSERT INTO customers (first_name, last_name, email) 
 VALUES ('Boy', 'George', 'george@gmail.com'),
@@ -25,8 +29,7 @@ VALUES ('Boy', 'George', 'george@gmail.com'),
        ('David', 'Bowie', 'david@gmail.com'),
        ('Blue', 'Steele', 'blue@gmail.com'),
        ('Bette', 'Davis', 'bette@aol.com');
-       
-       
+
 INSERT INTO orders (order_date, amount, customer_id)
 VALUES ('2016-02-10', 99.99, 1),
        ('2017-11-11', 35.50, 1),
@@ -34,4 +37,4 @@ VALUES ('2016-02-10', 99.99, 1),
        ('2015-01-03', 12.50, 2),
        ('1999-04-11', 450.25, 5);
 
-INSERT INTO orders (order_date, amount, customer_id) VALUES ('2016-02-10', 99.99, 9);
+INSERT INTO orders (order_date, amount, customer_id) VALUES ('2016-02-10', 99.99, 9); -- show error no customer id having id=9
